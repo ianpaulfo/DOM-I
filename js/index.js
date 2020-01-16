@@ -41,8 +41,18 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// Add the navigation to the header
+//images
+const ctaImage = document.getElementById('cta-img');
+ctaImage.src = 'img/header-img.png';
 
+const middleImage = document.getElementById('middle-img');
+middleImage.src = 'img/mid-page-accent.jpg';
+
+
+
+
+
+// Add the navigation to the header
 const nav = document.querySelectorAll('header nav a');
 
 // Change the color of each navigation item from black to green
@@ -56,7 +66,6 @@ nav[4].textContent = siteContent.nav['nav-item-5'];
 nav[5].textContent = siteContent.nav['nav-item-6'];
 
 // Create two new elements
-
 const newNav = document.querySelector('nav');
 
 const newNavItem1 = document.createElement('a');
@@ -71,3 +80,12 @@ newNavItem2.style.color = 'green';
 
 newNav.prepend(newNavItem1);
 newNav.appendChild(newNavItem2);
+
+//header text
+const headerText = document.querySelector('h1');
+headerText.textContent = siteContent.cta.h1;
+
+// Button
+const button = document.querySelector('button');
+button.textContent = siteContent.cta.button;
+
