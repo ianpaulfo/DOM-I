@@ -53,19 +53,58 @@ middleImage.src = 'img/mid-page-accent.jpg';
 
 
 // Add the navigation to the header
-const nav = document.querySelectorAll('header nav a');
 
-// Change the color of each navigation item from black to green
-nav.forEach(item => (item.style.color = 'green'));
+const navItems = document.querySelectorAll('a');
+let itemIncrement = 1;
+const navList = navItems.forEach(cv => {
+  return (cv.textContent = siteContent.nav[`nav-item-${itemIncrement++}`]);
+});
 
-nav[0].textContent = siteContent.nav['nav-item-1'];
-nav[1].textContent = siteContent.nav['nav-item-2'];
-nav[2].textContent = siteContent.nav['nav-item-3'];
-nav[3].textContent = siteContent.nav['nav-item-4'];
-nav[4].textContent = siteContent.nav['nav-item-5'];
-nav[5].textContent = siteContent.nav['nav-item-6'];
 
-// Create two new elements
+//header text
+const headerText = document.querySelector('h1');
+headerText.textContent = siteContent.cta.h1;
+
+// Button
+const button = document.querySelector('button');
+button.textContent = siteContent.cta.button;
+
+// Main Content
+const mainContent = siteContent['main-content'];
+
+const featuresH4 = document.querySelectorAll('h4');
+featuresH4[0].textContent = mainContent['features-h4'];
+featuresH4[1].textContent = mainContent['about-h4'];
+featuresH4[2].textContent = mainContent['services-h4'];
+featuresH4[3].textContent = mainContent['product-h4'];
+featuresH4[4].textContent = mainContent['vision-h4'];
+featuresH4[5].textContent = siteContent.contact['contact-h4'];
+
+const bodyContentParagraphs = document.querySelectorAll('p');
+bodyContentParagraphs[0].textContent = mainContent['features-content'];
+bodyContentParagraphs[1].textContent = mainContent['about-content'];
+bodyContentParagraphs[2].textContent = mainContent['services-content'];
+bodyContentParagraphs[3].textContent = mainContent['product-content'];
+bodyContentParagraphs[4].textContent = mainContent['vision-content'];
+
+//Contact
+const contactSection = siteContent.contact;
+
+const contactH4 = document.querySelectorAll('.contact h4');
+contactH4.textContent = contactSection['contact-h4'];
+
+const contactParagraph = document.querySelectorAll('.contact p');
+contactParagraph[0].textContent = contactSection.address;
+contactParagraph[1].textContent = contactSection.phone;
+contactParagraph[2].textContent = contactSection.email;
+
+// Footer
+const footerShortcut = siteContent.footer;
+
+const copyright = document.querySelector('footer p');
+copyright.textContent = footerShortcut.copyright;
+
+// Create two new elements and make text green
 const newNav = document.querySelector('nav');
 
 const newNavItem1 = document.createElement('a');
@@ -81,11 +120,5 @@ newNavItem2.style.color = 'green';
 newNav.prepend(newNavItem1);
 newNav.appendChild(newNavItem2);
 
-//header text
-const headerText = document.querySelector('h1');
-headerText.textContent = siteContent.cta.h1;
 
-// Button
-const button = document.querySelector('button');
-button.textContent = siteContent.cta.button;
-
+navItems.forEach(item => (item.style.color = 'green'));
