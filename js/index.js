@@ -56,8 +56,23 @@ middleImage.src = 'img/mid-page-accent.jpg';
 
 const navItems = document.querySelectorAll('a');
 let itemIncrement = 1;
-const navList = navItems.forEach(cv => {
-  return (cv.textContent = siteContent.nav[`nav-item-${itemIncrement++}`]);
+const navList = navItems.forEach(link => {
+  return (link.textContent = siteContent.nav[`nav-item-${itemIncrement++}`]);
+});
+  navItems.forEach(link => {
+    link.style.color = 'green';
+    link.onmouseover = function() {
+      mouseover();
+    };
+    link.onmouseout = function() {
+      mouseOut();
+    };
+    function mouseover() {
+      link.style.backgroundColor = 'red';
+    }
+    function mouseOut() {
+      link.style.backgroundColor = 'white';
+    }
 });
 
 
@@ -112,10 +127,36 @@ newNavItem1.textContent = 'Home';
 newNavItem1.href = '#';
 newNavItem1.style.color = 'green';
 
+newNavItem1.onmouseover = function() {
+  FrontmouseOver();
+};
+newNavItem1.onmouseout = function() {
+  FrontmouseOut();
+};
+function FrontmouseOver() {
+  newNavItem1.style.backgroundColor = 'red';
+}
+function FrontmouseOut() {
+  newNavItem1.style.backgroundColor = 'white';
+}
+
 const newNavItem2 = document.createElement('a');
 newNavItem2.textContent = 'Blog';
 newNavItem2.href = '#';
 newNavItem2.style.color = 'green';
+
+newNavItem2.onmouseover = function() {
+  FrontmouseOver();
+};
+newNavItem2.onmouseout = function() {
+  FrontmouseOut();
+};
+function FrontmouseOver() {
+  newNavItem2.style.backgroundColor = 'red';
+}
+function FrontmouseOut() {
+  newNavItem2.style.backgroundColor = 'white';
+}
 
 newNav.prepend(newNavItem1);
 newNav.appendChild(newNavItem2);
