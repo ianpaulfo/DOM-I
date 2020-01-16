@@ -40,3 +40,34 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Add the navigation to the header
+
+const nav = document.querySelectorAll('header nav a');
+
+// Change the color of each navigation item from black to green
+nav.forEach(item => (item.style.color = 'green'));
+
+nav[0].textContent = siteContent.nav['nav-item-1'];
+nav[1].textContent = siteContent.nav['nav-item-2'];
+nav[2].textContent = siteContent.nav['nav-item-3'];
+nav[3].textContent = siteContent.nav['nav-item-4'];
+nav[4].textContent = siteContent.nav['nav-item-5'];
+nav[5].textContent = siteContent.nav['nav-item-6'];
+
+// Create two new elements
+
+const newNav = document.querySelector('nav');
+
+const newNavItem1 = document.createElement('a');
+newNavItem1.textContent = 'Home';
+newNavItem1.href = '#';
+newNavItem1.style.color = 'green';
+
+const newNavItem2 = document.createElement('a');
+newNavItem2.textContent = 'Blog';
+newNavItem2.href = '#';
+newNavItem2.style.color = 'green';
+
+newNav.prepend(newNavItem1);
+newNav.appendChild(newNavItem2);
